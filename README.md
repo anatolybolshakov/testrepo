@@ -1,2 +1,2 @@
 # justforfun
-Test repo
+Just for ~~fun~~ test purposes
