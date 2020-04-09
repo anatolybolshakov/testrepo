@@ -1,2 +1,2 @@
 # justforfun
-Just for ~~fun~~ test purposes
+Just for fun&test purposes
