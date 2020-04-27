@@ -10,10 +10,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: AndroidSigningTest@3
-  inputs:
-    apkFiles: '**/*.apk'
-    apksignerKeystoreFile: 'notexist.jks'
 - task: PowerShell@2
   inputs:
     filePath: 'test1.ps1'
