@@ -6,12 +6,11 @@
 trigger:
 - master
 
-variables:
-  sshKeyStoreFile: "secureFile"
-
 pool:
   name: 'Default'
 
+variables:
+  sshKeyStoreFile: "secureFile"
 steps:
 - task: NodeTool@0
   inputs:
