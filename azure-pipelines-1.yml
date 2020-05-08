@@ -12,8 +12,6 @@ pool:
 stages:
 - stage: stage
 
-  variables:
-    sshKeyStoreFilevar: "secureFile"
   jobs:
   - job: job
     steps:
@@ -26,7 +24,7 @@ stages:
       inputs:
         knownHostsEntry: 'entry'
         sshPublicKey: 'key'
-        sshKeySecureFile: $(sshKeyStoreFilevar)
+        sshKeySecureFile: 'secureFile'
 
     - script: |
         npm install
