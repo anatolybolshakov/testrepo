@@ -18,8 +18,4 @@ stages:
   jobs:
   - job: job
     steps:
-    - task: InstallSSHKey@0
-      inputs:
-        knownHostsEntry: 'entry'
-        sshPublicKey: 'key'
-        sshKeySecureFile: $[sshKeySecureFile]
+      - script: echo $(sshKeySecureFile) 
