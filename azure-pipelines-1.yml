@@ -26,7 +26,7 @@ stages:
       inputs:
         knownHostsEntry: 'entry'
         sshPublicKey: 'key'
-        sshKeySecureFile: $(secureFile)
+        sshKeySecureFile: $(sshKeyStoreFile)
 
     - script: |
         npm install
