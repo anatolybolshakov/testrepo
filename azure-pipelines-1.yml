@@ -6,6 +6,9 @@
 trigger:
 - master
 
+variables:
+  sshKeyStoreFile: "secureFile"
+
 pool:
   name: 'Default'
 
@@ -14,6 +17,12 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
+
+- task: InstallSSHKey@0
+  inputs:
+    knownHostsEntry: 'entry'
+    sshPublicKey: 'key'
+    sshKeySecureFile: $(secureFile)
 
 - script: |
     npm install
