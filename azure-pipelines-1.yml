@@ -9,11 +9,11 @@ trigger:
 pool:
   name: 'Default'
 
-variables:
-    sshKeySecureFile: 'secureFile.txt'
+
 stages:
 - stage: stage
-
+  variables:
+    sshKeySecureFile: 'secureFile.txt'
 
   jobs:
   - job: job
