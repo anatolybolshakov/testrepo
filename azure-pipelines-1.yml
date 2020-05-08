@@ -9,24 +9,17 @@ trigger:
 pool:
   name: 'Default'
 
+variables:
+  sshKeySecureFile: 'secureFile.txt'
+
 stages:
 - stage: stage
 
   jobs:
   - job: job
     steps:
-    - task: NodeTool@0
-      inputs:
-        versionSpec: '10.x'
-      displayName: 'Install Node.js'
-
     - task: InstallSSHKey@0
       inputs:
         knownHostsEntry: 'entry'
         sshPublicKey: 'key'
-        sshKeySecureFile: 'secureFile'
-
-    - script: |
-        npm install
-        npm run build
-      displayName: 'npm install and build'
+        sshKeySecureFile: $(sshKeySecureFile)
