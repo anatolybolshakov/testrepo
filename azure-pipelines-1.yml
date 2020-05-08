@@ -20,8 +20,6 @@ stages:
     steps:
     - script: echo $(sshKeySecureFile) 
 
-    - task: InstallSSHKey@0
+    - task: DownloadSecureFile@1
       inputs:
-        knownHostsEntry: 'ssh_test'
-        sshPublicKey: 'ssh_test'
-        sshKeySecureFile: $(sshKeySecureFile)
+        secureFile: $(sshKeySecureFile)
