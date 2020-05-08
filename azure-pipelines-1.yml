@@ -13,7 +13,7 @@ stages:
 - stage: stage
 
   variables:
-    sshKeyStoreFile: "secureFile"
+    sshKeyStoreFilevar: "secureFile"
   jobs:
   - job: job
     steps:
@@ -26,7 +26,7 @@ stages:
       inputs:
         knownHostsEntry: 'entry'
         sshPublicKey: 'key'
-        sshKeySecureFile: $(sshKeyStoreFile)
+        sshKeySecureFile: $(sshKeyStoreFilevar)
 
     - script: |
         npm install
