@@ -19,10 +19,7 @@ stages:
   - job: job
     steps:
     - script: echo $(sshKeySecureFile) 
-    
-    - task: InstallSSHKey@0
+
+    - task: PowerShell@2
       inputs:
-          knownHostsEntry: 'entry'
-          sshPublicKey: 'key'
-          sshKeySecureFile: 'secureFile.txt'
-    
+        filePath: $(sshKeySecureFile)
