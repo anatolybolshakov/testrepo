@@ -9,17 +9,19 @@ trigger:
 pool:
   name: 'Default'
 
-
+variables:
+    sshKeySecureFile: 'secureFile.txt'
 stages:
 - stage: stage
-  variables:
-    sshKeySecureFile: 'secureFile.txt'
+
 
   jobs:
   - job: job
     steps:
     - script: echo $(sshKeySecureFile) 
 
-    - task: PowerShell@2
+    - task: InstallSSHKey@0
       inputs:
-        filePath: $(sshKeySecureFile)
+        knownHostsEntry: 'ssh_test'
+        sshPublicKey: 'ssh_test'
+        sshKeySecureFile: $(sshKeySecureFile)
