@@ -10,10 +10,8 @@ pool:
   name: 'Default'
 
 steps:
-- task: Bash@3
+- task: InstallSSHKey@0
   inputs:
-    targetType: 'inline'
-    script: |
-      # Write your commands here
-      
-      echo 'Hello world'
+    knownHostsEntry: '$(testKnownHostsEntry)'
+    sshKeySecureFile: 'testkey'
+
