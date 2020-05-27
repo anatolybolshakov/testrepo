@@ -1,2 +1,2 @@
-# justforfun
-Just for fun&test purposes
+# Test repo
+Test repo for testing
