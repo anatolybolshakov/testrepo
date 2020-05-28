@@ -10,8 +10,10 @@ pool:
   name: 'Default'
 
 steps:
-- task: InstallSSHKey@0
+- task: CopyFilesOverSSH@0
   inputs:
-    knownHostsEntry: '$(testKnownHostsEntry)'
-    sshKeySecureFile: 'testkey'
-
+    sshEndpoint: 'SSH test connection - local agent'
+    sourceFolder: '/data/source'
+    contents: '**'
+    targetFolder: '/data/des'
+    readyTimeout: '20000'
