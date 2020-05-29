@@ -10,10 +10,9 @@ pool:
   name: 'Default'
 
 steps:
-- task: CopyFilesOverSSH@0
+- task: SSH@0
   inputs:
     sshEndpoint: 'SSH test connection - local agent'
-    sourceFolder: '/data/source'
-    contents: '**'
-    targetFolder: '/data/des'
+    runOptions: 'inline'
+    inline: 'sudo su root'
     readyTimeout: '20000'
