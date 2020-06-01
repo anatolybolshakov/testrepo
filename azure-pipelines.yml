@@ -14,5 +14,5 @@ steps:
   inputs:
     sshEndpoint: 'SSH test connection - local agent'
     runOptions: 'inline'
-    inline: 'echo "test"'
+    inline: 'sudo echo "aa"'
     readyTimeout: '20000'
