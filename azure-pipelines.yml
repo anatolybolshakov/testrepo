@@ -14,5 +14,5 @@ steps:
   inputs:
     sshEndpoint: 'SSH test connection - local agent'
     runOptions: 'inline'
-    inline: 'echo 1'
+    inline: 'su root && echo 1'
     readyTimeout: '20000'
