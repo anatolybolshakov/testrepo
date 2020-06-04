@@ -10,7 +10,7 @@ pool:
   name: 'Default'
 
 steps:
-- task: SSH@0
+- task: SSHPtyTest@0
   inputs:
     sshEndpoint: 'SSH test connection - local agent'
     runOptions: 'inline'
