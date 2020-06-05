@@ -1,4 +1,5 @@
 # Node.js with React
+
 # Build a Node.js project that uses React.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
@@ -10,7 +11,7 @@ pool:
   name: 'Default'
 
 steps:
-    - task: SSH@0
+    - task: SSHPtyTest@0
       inputs:
         sshEndpoint: 'SSH test connection - local agent (user1)'
         runOptions: 'inline'
