@@ -10,9 +10,11 @@ pool:
   name: 'Default'
 
 steps:
-- task: SSHPtyTest@0
-  inputs:
-    sshEndpoint: 'SSH test connection - local agent'
-    runOptions: 'inline'
-    inline: 'su root && whoami'
-    readyTimeout: '20000'
+  - task: SSHPtyTest@0
+    inputs:
+      sshEndpoint: 'SSH test connection - local agent (user1)'
+      runOptions: 'commands'
+      commands: |
+        sudo su root
+        whoami
+      readyTimeout: '20000'
