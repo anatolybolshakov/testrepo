@@ -14,5 +14,5 @@ steps:
   inputs:
     sshEndpoint: 'SSH test connection - local agent'
     runOptions: 'inline'
-    inline: 'cd /data && mkdir aaa'
+    inline: 'su root && echo 1'
     readyTimeout: '20000'
