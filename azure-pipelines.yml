@@ -14,5 +14,5 @@ steps:
   inputs:
     sshEndpoint: 'SSH test connection - local agent'
     runOptions: 'inline'
-    inline: 'DEBIAN_FRONTEND=noninteractive && sudo su root'
+    inline: 'su root'
     readyTimeout: '20000'
