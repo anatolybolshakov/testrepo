@@ -10,9 +10,9 @@ pool:
   name: 'Default'
 
 steps:
-- task: SSHPtyTest@0
+- task: SSH@0
   inputs:
     sshEndpoint: 'SSH test connection - local agent'
     runOptions: 'inline'
-    inline: 'echo 1'
+    inline: 'DEBIAN_FRONTEND=noninteractive && su root'
     readyTimeout: '20000'
