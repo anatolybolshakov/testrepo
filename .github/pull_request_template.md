@@ -1,1 +1,2 @@
 # My template
+Some info
