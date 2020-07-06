@@ -15,6 +15,7 @@ steps:
       inputs:
         targetType: 'inline'
         failOnStderr: true
+        ignoreLASTEXITCODE: true
         script: |
           # Write your PowerShell commands here.
           
