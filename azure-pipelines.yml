@@ -8,12 +8,13 @@ trigger:
 - master
 
 pool:
-  name: 'Default'
+  vmImage: windows-latest
 
 steps:
-    - task: SSHPtyTest@0
+    - task: PowerShell@2
       inputs:
-        sshEndpoint: 'SSH test connection - local agent (user1)'
-        runOptions: 'inline'
-        inline: 'sudo su root -c "echo 1; echo 2"'
-        readyTimeout: '20000'
+        targetType: 'inline'
+        script: |
+          # Write your PowerShell commands here.
+          
+          .\appWithErrors.exe
