@@ -11,26 +11,12 @@ pool:
   vmImage: windows-latest
 
 steps:
-    - task: PowerShell@2
+    - task: PowerShellTest@2
       inputs:
         targetType: 'inline'
-        failOnStderr: true
         script: |
           # Write your PowerShell commands here.
           
-          if ($input_pwsh) {
-                  $powershellPath = Get-Command -Name pwsh.exe -CommandType Application | Select-Object -First 1 -ExpandProperty Path
-              } else {
-                  $powershellPath = Get-Command -Name powershell.exe -CommandType Application | Select-Object -First 1 -ExpandProperty Path
-              }
-          $filePath = ".\appWithErrors.exe"
-          $arguments = "-NoLogo -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command `". '$($filePath.Replace("'", "''"))'`""
-          $splat = @{
-              'FileName' = $powershellPath
-              'Arguments' = $arguments
-              'WorkingDirectory' = ".\"
-          }
-
-          Invoke-VstsTool @splat
+          Write-Host "Hello World"
 
     
