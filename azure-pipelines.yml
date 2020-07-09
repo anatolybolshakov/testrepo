@@ -14,7 +14,7 @@ steps:
 - task: SSH@0
   inputs:
     sshEndpoint: 'SSH test connection - local agent (user1)'
-    runOptions: 'commands'
+    runOptions: 'inline'
     interactiveSession: true
     inline: |
       sudo echo aa
