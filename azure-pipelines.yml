@@ -13,9 +13,9 @@ pool:
 steps:
 - task: SSH@0
   inputs:
-    sshEndpoint: 'SSH test connection - local agent (root)'
+    sshEndpoint: 'SSH test connection - local agent (user1)'
     runOptions: 'commands'
-    interactiveSession: false
+    interactiveSession: true
     commands: |
       sudo echo aa
       sudo -su crm
