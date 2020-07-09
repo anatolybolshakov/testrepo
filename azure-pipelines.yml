@@ -16,7 +16,5 @@ steps:
     sshEndpoint: 'SSH test connection - local agent (user1)'
     runOptions: 'inline'
     interactiveSession: true
-    inline: |
-      sudo echo aa
-      sudo -su crm
+    inline: sudo echo aa
     readyTimeout: '20000'
