@@ -11,10 +11,25 @@ pool:
   name: Default
 
 steps:
-  - task: SSH@0
-    inputs:
-      sshEndpoint: 'SSH test connection - local agent (user1)'
-      runOptions: 'inline'
-      inline: 'sudo echo aa'
-      interactiveSession: true
-      readyTimeout: '20000'
+- task: InstallSSHKeytest@0
+  inputs:
+    knownHostsEntry: 'sss'
+    sshPublicKey: 'ss'
+    sshPassphrase: 'ss'
+    sshKeySecureFile: 'sss'
+
+    
+- task: InstallSSHKeytest@0
+  inputs:
+    knownHostsEntry: 'sss'
+    sshPublicKey: 'ss'
+    sshPassphrase: 'ss'
+    sshKeySecureFile: 'sss'
+
+    
+- task: InstallSSHKeytest@0
+  inputs:
+    knownHostsEntry: 'sss'
+    sshPublicKey: 'ss'
+    sshPassphrase: 'ss'
+    sshKeySecureFile: 'sss'
