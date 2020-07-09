@@ -11,10 +11,10 @@ pool:
   name: Default
 
 steps:
-- task: SSH@0
-  inputs:
-    sshEndpoint: 'SSH test connection - local agent (user1)'
-    runOptions: 'inline'
-    interactiveSession: true
-    inline: sudo echo aa
-    readyTimeout: '20000'
+  - task: SSH@0
+    inputs:
+      sshEndpoint: 'SSH test connection - local agent (user1)'
+      runOptions: 'inline'
+      inline: 'sudo echo aa'
+      interactiveSession: true
+      readyTimeout: '20000'
