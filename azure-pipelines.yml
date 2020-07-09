@@ -13,7 +13,7 @@ pool:
 steps:
 - task: SSHtest@0
   inputs:
-    sshEndpoint: 'SSH test connection - local agent (root)'
+    sshEndpoint: 'SSH test connection - local agent (user1)'
     runOptions: 'commands'
     interactiveSession: true
     commands: |
