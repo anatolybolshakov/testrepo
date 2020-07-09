@@ -15,6 +15,7 @@ steps:
   inputs:
     sshEndpoint: 'SSH test connection - local agent (root)'
     runOptions: 'commands'
+    interactiveSession: false
     commands: |
       sudo echo aa
       sudo -su crm
