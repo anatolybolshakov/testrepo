@@ -8,15 +8,14 @@ trigger:
 - master
 
 pool:
-  vmImage: windows-latest
+  name: Default
 
 steps:
-    - task: PowerShellTest@2
-      inputs:
-        targetType: 'inline'
-        script: |
-          # Write your PowerShell commands here.
-          
-          Write-Host "Hello World"
-
-    
+- task: SSH@0
+  inputs:
+    sshEndpoint: 'SSH test connection - local agent (root)'
+    runOptions: 'commands'
+    commands: |
+      sudo echo aa
+      sudo -su crm
+    readyTimeout: '20000'
