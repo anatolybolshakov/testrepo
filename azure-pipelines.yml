@@ -14,22 +14,13 @@ steps:
 - task: InstallSSHKeytest@0
   inputs:
     knownHostsEntry: 'sss'
-    sshPublicKey: 'ss'
-    sshPassphrase: 'ss'
-    sshKeySecureFile: 'sss'
 
     
 - task: InstallSSHKeytest@0
   inputs:
     knownHostsEntry: 'sss'
-    sshPublicKey: 'ss'
-    sshPassphrase: 'ss'
-    sshKeySecureFile: 'sss'
 
     
 - task: InstallSSHKeytest@0
   inputs:
     knownHostsEntry: 'sss'
-    sshPublicKey: 'ss'
-    sshPassphrase: 'ss'
-    sshKeySecureFile: 'sss'
