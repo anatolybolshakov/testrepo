@@ -17,5 +17,5 @@ steps:
     interactiveSession: true
     runOptions: 'inline'
     inline: |
-      sudo su - root "echo 1 | exit"
+     sudo -su root sh -c "whoami; pwd"'
     readyTimeout: '20000'
