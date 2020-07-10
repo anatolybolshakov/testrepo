@@ -17,5 +17,5 @@ steps:
     interactiveSession: true
     runOptions: 'inline'
     inline: |
-     sudo -su root sh -c "whoami"'
+     sudo -su root sh -c "whoami"
     readyTimeout: '20000'
