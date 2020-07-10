@@ -11,16 +11,11 @@ pool:
   name: Default
 
 steps:
-- task: InstallSSHKeytest@0
+- task: SSH@0
   inputs:
-    knownHostsEntry: 'sss'
-
-    
-- task: InstallSSHKeytest@0
-  inputs:
-    knownHostsEntry: 'sss'
-
-    
-- task: InstallSSHKeytest@0
-  inputs:
-    knownHostsEntry: 'sss'
+    sshEndpoint: 'SSH test connection - local agent (user1)'
+    runOptions: 'inline'
+    inline: |
+      sudo echo aa
+      sudo -su root
+    readyTimeout: '20000'
