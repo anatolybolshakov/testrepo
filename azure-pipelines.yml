@@ -17,5 +17,5 @@ steps:
     interactiveSession: true
     runOptions: 'inline'
     inline: |
-      sudo su - root && exit
+      sudo su - root
     readyTimeout: '20000'
