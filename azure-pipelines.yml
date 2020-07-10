@@ -18,5 +18,4 @@ steps:
     runOptions: 'inline'
     inline: |
       sudo su - root
-      echo 2
     readyTimeout: '20000'
