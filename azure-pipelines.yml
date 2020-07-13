@@ -15,6 +15,6 @@ steps:
    inputs:
      sshEndpoint: 'SSH test connection - local agent (user1)'
      sourceFolder: '/home/user1/s1'
-     contents: 'file'
+     contents: '**'
      targetFolder: '/home/user1/d1'
      readyTimeout: '20000'
