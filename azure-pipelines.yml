@@ -11,11 +11,10 @@ pool:
   name: Default
 
 steps:
-- task: SSH@0
-  inputs:
-    sshEndpoint: 'SSH test connection - local agent (user1)'
-    interactiveSession: true
-    runOptions: 'inline'
-    inline: |
-     sudo -su root sh -c "whoami; echo 2"
-    readyTimeout: '20000'
+ - task: CopyFilesOverSSHTestV1@0
+   inputs:
+     sshEndpoint: 'SSH test connection - local agent (user1)'
+     sourceFolder: 's1'
+     contents: 'file'
+     targetFolder: 'd1'
+     readyTimeout: '20000'
