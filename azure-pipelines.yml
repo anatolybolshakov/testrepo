@@ -17,11 +17,7 @@ stages:
   jobs:
   - job: job
     steps:
-      - task: DownloadSecureFile@1
-        inputs:
-          secureFile: $(secureFileName)
       - task: CmdLine@2
         inputs:
           script: |
-            cd $(Agent.TempDirectory)
-            dir
+            echo $(secureFileName)
