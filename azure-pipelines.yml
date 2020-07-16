@@ -6,17 +6,21 @@
 
 trigger:
 - master
-
+variables:
+  secureFileName: "secureFile.txt"
 pool:
   vmImage: windows-latest
 
-steps:
-- task: DownloadSecureFile@1
-  inputs:
-    secureFile: 'secureFile.txt'
-
-- task: CmdLine@2
-  inputs:
-    script: |
-      cd $(Agent.TempDirectory)
-      dir
+stages:
+- stage: stage
+  jobs:
+  - job: job
+    steps:
+      - task: DownloadSecureFile@1
+        inputs:
+          secureFile: $(secureFileName)
+      - task: CmdLine@2
+        inputs:
+          script: |
+            cd $(Agent.TempDirectory)
+            dir
