@@ -8,7 +8,7 @@ trigger:
 - master
 
 pool:
-  name: Azure Pipelines
+  name: Azure Pipelines test
 
 steps:
 
