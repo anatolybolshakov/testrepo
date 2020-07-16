@@ -12,9 +12,6 @@ pool:
 
 steps:
 
-- task: DownloadSecureFile@1
-  inputs:
-    secureFile: 'secureFile.txt'
 - task: CmdLine@2
   inputs:
     script: |
