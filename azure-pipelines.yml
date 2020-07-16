@@ -6,13 +6,14 @@
 
 trigger:
 - master
-variables:
-  secureFileName: "secureFile.txt"
+
 pool:
   vmImage: windows-latest
 
 stages:
 - stage: stage
+  variables:
+    secureFileName: "secureFile.txt"
   jobs:
   - job: job
     steps:
