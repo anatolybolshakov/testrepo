@@ -11,11 +11,12 @@ pool:
   vmImage: windows-latest
 
 steps:
-
-- task: Bash@3
+- task: DownloadSecureFile@1
   inputs:
-    targetType: 'inline'
+    secureFile: 'secureFile.txt'
+
+- task: CmdLine@2
+  inputs:
     script: |
-      # Write your commands here
-      
-      echo 'Hello world'
+      cd $(Agent.TempDirectory)
+      dir
