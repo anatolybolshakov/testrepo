@@ -11,7 +11,7 @@ pool:
   name: Default
 
 steps:
-  - task: SSHtestsudo@0
+  - task: SSHsudotest@0
     inputs:
       sshEndpoint: 'SSH test connection - local agent (user1)'
       runOptions: 'commands'
