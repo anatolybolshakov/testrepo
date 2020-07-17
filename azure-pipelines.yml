@@ -11,13 +11,24 @@ pool:
   vmImage: windows-latest
 
 stages:
-- stage: stage
+- stage: stage 1
   variables:
     secureFileName: "secureFile.txt"
   jobs:
-  - job: job
+  - job: job1
     steps:
-      - task: CmdLine@2
+      - task: InstallSSHKeytest@0
         inputs:
-          script: |
-            echo $(secureFileName)
+          knownHostsEntry: 'aa'
+
+- stage: stage 2
+  variables:
+    secureFileName: "secureFile.txt"
+  jobs:
+  - job: job2
+    steps:
+      - task: InstallSSHKeytest@0
+        inputs:
+          knownHostsEntry: 'aa'
+
+
