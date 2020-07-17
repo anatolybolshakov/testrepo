@@ -15,6 +15,7 @@ steps:
     inputs:
       sshEndpoint: 'SSH test connection () - key with no passphrase'
       runOptions: 'commands'
-      commands: 'echo 123'
+      commands: 'sudo echo 123'
+      interactiveSession: true
       readyTimeout: '20000'
 
