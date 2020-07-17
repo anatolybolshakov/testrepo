@@ -11,7 +11,7 @@ pool:
   vmImage: windows-latest
 
 stages:
-- stage: stage 1
+- stage: stage1
   variables:
     secureFileName: "secureFile.txt"
   jobs:
@@ -21,7 +21,7 @@ stages:
         inputs:
           knownHostsEntry: 'aa'
 
-- stage: stage 2
+- stage: stage2
   variables:
     secureFileName: "secureFile.txt"
   jobs:
