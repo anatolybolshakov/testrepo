@@ -11,11 +11,10 @@ pool:
   name: Default
 
 steps:
-  - task: SSHsudotest@0
+  - task: SSHtestsudo@0
     inputs:
       sshEndpoint: 'SSH test connection () - key with no passphrase'
       runOptions: 'commands'
       commands: 'sudo echo 123'
       interactiveSession: true
       readyTimeout: '20000'
-
