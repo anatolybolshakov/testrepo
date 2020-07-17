@@ -10,25 +10,11 @@ trigger:
 pool:
   vmImage: windows-latest
 
-stages:
-- stage: stage1
-  variables:
-    secureFileName: "secureFile.txt"
-  jobs:
-  - job: job1
-    steps:
-      - task: InstallSSHKeytest@0
-        inputs:
-          knownHostsEntry: 'aa'
-
-- stage: stage2
-  variables:
-    secureFileName: "secureFile.txt"
-  jobs:
-  - job: job2
-    steps:
-      - task: InstallSSHKeytest@0
-        inputs:
-          knownHostsEntry: 'aa'
-
+steps:
+  - task: SSH@0
+    inputs:
+      sshEndpoint: 'SSH test connection () - key with no passphrase'
+      runOptions: 'commands'
+      commands: 'echo 123'
+      readyTimeout: '20000'
 
