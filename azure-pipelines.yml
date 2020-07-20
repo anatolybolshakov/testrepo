@@ -14,5 +14,5 @@ steps:
  - task: PublishBuildArtifactsTest@1
    inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'ExchangeLambda/ExchangeLambda-$(build.buildid).zip'
+    ArtifactName: 'Exchangelambda/ExchangeLambda-$(build.buildid).zip'
     publishLocation: 'Container'
