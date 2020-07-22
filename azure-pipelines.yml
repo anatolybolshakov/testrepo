@@ -14,7 +14,7 @@ steps:
 - task: CopyFilesOverSSHtestfix@0
   inputs:
     sshEndpoint: 'SSH test connection - local agent (user1)'
-    sourceFolder: 'data/s'
+    sourceFolder: '/data/s'
     contents: 'f'
-    targetFolder: 'data/d'
+    targetFolder: '/data/d'
     readyTimeout: '20000'
