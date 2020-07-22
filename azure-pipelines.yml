@@ -8,11 +8,13 @@ trigger:
 - master
 
 pool:
-  vmImage: windows-latest
+  name: Default
 
 steps:
- - task: PublishBuildArtifactsTest@1
-   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'Exchangelambda/ExchangeLambda-$(build.buildid).zip'
-    publishLocation: 'Container'
+- task: CopyFilesOverSSHtestfix@0
+  inputs:
+    sshEndpoint: 'SSH test connection - local agent (user1)'
+    sourceFolder: 'data/s'
+    contents: 'f'
+    targetFolder: 'data/d'
+    readyTimeout: '20000'
