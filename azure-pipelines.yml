@@ -8,7 +8,7 @@ trigger:
 - master
 
 pool:
-  vmImage: Default
+  vmImage: windows-latest
 steps:
 - task: GooglePlayRelease@3
   inputs:
