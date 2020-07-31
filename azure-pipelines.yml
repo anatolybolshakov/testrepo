@@ -8,9 +8,12 @@ trigger:
 - master
 
 pool:
-  name: Default
-
+  vmImage: Default
 steps:
+- task: GooglePlayRelease@3
+  inputs:
+    apkFile: 
+    track: 'internal'
 - task: CopyFilesOverSSH@0
   inputs:
     sshEndpoint: 'SSH test connection - local agent (user1)'
