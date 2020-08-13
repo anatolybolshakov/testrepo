@@ -10,7 +10,7 @@ trigger:
 pool:
   name: Default
 steps:
-- task: JavaToolInstallertest@0
+- task: JavaToolInstallertest5@0
   inputs:
     versionSpec: '8'
     jdkArchitectureOption: 'x86'
