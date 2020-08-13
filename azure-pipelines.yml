@@ -8,16 +8,13 @@ trigger:
 - master
 
 pool:
-  vmImage: windows-latest
+  name: Default
 steps:
-- task: GooglePlayRelease@3
+- task: JavaToolInstallertest@0
   inputs:
-    apkFile: 
-    track: 'internal'
-- task: CopyFilesOverSSH@0
-  inputs:
-    sshEndpoint: 'SSH test connection - local agent (user1)'
-    sourceFolder: '/data/s'
-    contents: 'f'
-    targetFolder: '/data/d'
-    readyTimeout: '20000'
+    versionSpec: '8'
+    jdkArchitectureOption: 'x86'
+    jdkSourceOption: 'LocalDirectory'
+    jdkFile: './jdk.zip'
+    jdkDestinationDirectory: './JDK'
+    cleanDestinationDirectory: false
