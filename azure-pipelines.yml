@@ -28,6 +28,7 @@ steps:
   inputs:
     SourceFolder: 'aa'
     Contents: |
+      **/*
       !b/{file2,file3}
 
 - task: PowerShell@2
