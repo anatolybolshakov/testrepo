@@ -29,10 +29,6 @@ steps:
     SourceFolder: 'aa'
     Contents: |
       /**
-- task: DeleteFiles@1
-  inputs:
-    SourceFolder: 
-    Contents: 'myFileShare'
       b/!({file2,file3})
 
 - task: PowerShell@2
