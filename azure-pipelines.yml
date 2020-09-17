@@ -8,33 +8,33 @@ trigger:
 - master
 
 pool:
-  vmImage: windows-latest
+  name: Default
 steps:
-- task: PowerShell@2
+- task: SSHMigrationTest@0
   inputs:
-    targetType: 'inline'
-    script: |
-      # Write your PowerShell commands here.
-      mkdir aa
-      cd aa
-      echo a >> file1
-      mkdir b
-      cd b
-      echo b >> file2
-      echo c >> file3
-      echo d >> file4
+    sshEndpoint: 'SSH test connection - local agent (root)'
+    runOptions: 'commands'
+    commands: 'echo ''aa!'''
+    readyTimeout: '20000'
 
-- task: DeleteFiles@1
+- task: SSHMigrationTest@0
   inputs:
-    SourceFolder: 'aa'
-    Contents: |
-      **/*
-      !b/(file2|file3)
+    sshEndpoint: 'SSH test connection - local agent (root)'
+    runOptions: 'inline'
+    inline: echo 'echo 1' >> file
+    readyTimeout: '20000'
 
-- task: PowerShell@2
+- task: SSHMigrationTest@0
   inputs:
-    targetType: 'inline'
-    script: |
-      # Write your PowerShell commands here.
-      
-      get-childitem './' -recurse -force
+    sshEndpoint: 'SSH test connection - local agent (root)'
+    runOptions: 'script'
+    scriptPath: 'file'
+    readyTimeout: '20000'
+
+- task: SSHMigrationTest@0
+  inputs:
+    sshEndpoint: 'SSH test connection - local agent (root)'
+    runOptions: 'script'
+    interactiveSession: true
+    scriptPath: 'file'
+    readyTimeout: '20000'
