@@ -28,7 +28,7 @@ steps:
   inputs:
     sshEndpoint: 'SSH test connection - local agent (root)'
     runOptions: 'script'
-    scriptPath: 'file'
+    scriptPath: '/data/scripts/file'
     readyTimeout: '20000'
 
 - task: SSHMigrationTest@0
@@ -36,5 +36,5 @@ steps:
     sshEndpoint: 'SSH test connection - local agent (root)'
     runOptions: 'script'
     interactiveSession: true
-    scriptPath: 'file'
+    scriptPath: '/data/scripts/file'
     readyTimeout: '20000'
