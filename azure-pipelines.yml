@@ -15,32 +15,3 @@ steps:
     sshEndpoint: 'SSH test connection - local agent (root)'
     runOptions: 'commands'
     readyTimeout: '20000'
-
-- task: SSHMigrationTest@0
-  inputs:
-    sshEndpoint: 'SSH test connection - local agent (root)'
-    runOptions: 'commands'
-    commands: 'echo ''aa!'''
-    readyTimeout: '20000'
-
-- task: SSHMigrationTest@0
-  inputs:
-    sshEndpoint: 'SSH test connection - local agent (root)'
-    runOptions: 'inline'
-    inline: echo 'echo 1' >> file
-    readyTimeout: '20000'
-
-- task: SSHMigrationTest@0
-  inputs:
-    sshEndpoint: 'SSH test connection - local agent (root)'
-    runOptions: 'script'
-    scriptPath: '/data/scripts/file'
-    readyTimeout: '20000'
-
-- task: SSHMigrationTest@0
-  inputs:
-    sshEndpoint: 'SSH test connection - local agent (root)'
-    runOptions: 'script'
-    interactiveSession: true
-    scriptPath: '/data/scripts/file'
-    readyTimeout: '20000'
