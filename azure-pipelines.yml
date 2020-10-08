@@ -10,6 +10,12 @@ trigger:
 pool:
   name: Default
 steps:
+- task: SSH@0
+  inputs:
+    sshEndpoint: 'SSH test connection - local agent (root)'
+    runOptions: 'commands'
+    readyTimeout: '20000'
+
 - task: SSHMigrationTest@0
   inputs:
     sshEndpoint: 'SSH test connection - local agent (root)'
