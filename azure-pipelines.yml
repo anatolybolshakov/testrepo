@@ -14,7 +14,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      echo 1 >> aaa
+      echo 1 >> $(Build.ArtifactStagingDirectory)/aaa
 
 - task: PublishBuildArtifacts@1
   inputs:
