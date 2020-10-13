@@ -10,7 +10,7 @@ trigger:
 pool:
   name: v-anbols
 steps:
-- task: SSHBeforeMigrationTest@0
+- task: SSHBeforeMigrationTest2@0
   inputs:
     sshEndpoint: 'SSH test connection - local agent (root)'
     runOptions: 'inline'
