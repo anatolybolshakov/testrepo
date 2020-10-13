@@ -8,13 +8,11 @@ trigger:
 - master
 
 pool:
-  name: v-anbols
+  vmImage: windows-latest
 steps:
-- task: SSHBeforeMigrationTest2@0
+- task: PowerShell@2
   inputs:
-    sshEndpoint: 'SSH test connection - local agent (root)'
-    runOptions: 'inline'
-    failOnStdErr: false
-    inline: '1>&2 echo "msg to STDERR"'
-    readyTimeout: '20000'
-
+    targetType: 'inline'
+    script: |
+      $file = "$env:windir\System32\drivers\etc\hosts"
+      "127.0.0.1 remotehost.net" | Add-Content -PassThru $file
