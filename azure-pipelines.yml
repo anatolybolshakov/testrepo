@@ -14,7 +14,6 @@ steps:
   inputs:
     sshEndpoint: 'SSH test connection - local agent (root)'
     runOptions: 'inline'
-    failOnStdErr: false
     inline: '1>&2 echo "msg to STDERR"'
     readyTimeout: '20000'
 
