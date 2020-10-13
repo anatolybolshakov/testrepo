@@ -8,16 +8,17 @@ trigger:
 - master
 
 pool:
-  vmImage: windows-latest
+  name: v-anbols
 steps:
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
     script: |
-      echo 1 >> $(Build.ArtifactStagingDirectory)/aaa
+      Write-Error "error!"
 
-- task: PublishBuildArtifacts@1
+- task: SSHBeforeMigrationTest@0
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+    sshEndpoint: 'SSH test connection - local agent (root)'
+    runOptions: 'inline'
+    inline: '1>&2 echo "msg to STDERR"'
+    readyTimeout: '20000'
