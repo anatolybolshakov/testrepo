@@ -13,6 +13,5 @@ steps:
 - task: PowerShellPaulPRTest@2
   inputs:
     targetType: 'inline'
-    showWarnings: false
     script: |
       Write-Warning "beware!"
