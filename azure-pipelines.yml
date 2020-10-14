@@ -10,9 +10,9 @@ trigger:
 pool:
   vmImage: windows-latest
 steps:
-- task: PowerShell@2
+- task: PowerShellPaulPRTest@2
   inputs:
     targetType: 'inline'
+    showWarnings: true
     script: |
-      $file = "$env:windir\System32\drivers\etc\hosts"
-      "127.0.0.1 remotehost.net" | Add-Content -PassThru $file
+      Write-Warning "beware!"
