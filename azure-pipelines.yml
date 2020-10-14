@@ -16,7 +16,7 @@ steps:
     script: |
       # Write your commands here
       
-      \##vso[task.logissue type=warning;] aaa
+      echo '##vso[task.logissue type=warning;] aaa'
 - task: PowerShellPaulPRTest@2
   inputs:
     targetType: 'inline'
