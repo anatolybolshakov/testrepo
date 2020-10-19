@@ -14,12 +14,5 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      # Write your commands here
-      
-      echo '##vso[task.logissue type=warning;] aaa'
-- task: PowerShellPaulPRTest@2
-  inputs:
-    targetType: 'inline'
-    showWarnings: true
-    script: |
-      Write-Warning "beware!"
+      if ("$PATH"=="") { "npm i"}
+      else { "cd ${PATH} && npm i"}
