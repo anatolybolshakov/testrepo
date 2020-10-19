@@ -14,5 +14,8 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      if ("$PATH"=="") { "npm i"}
-      else { "cd ${PATH} && npm i"}
+      if ("$PATH"=="") 
+        then "npm i"
+      else
+        cd ${PATH} && npm i
+      fi
