@@ -14,8 +14,18 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      if ("$PATH"=="") 
-        then "npm i"
-      else
-        cd ${PATH} && npm i
-      fi
+      echo a >> 1
+      echo b >> 2
+
+- task: DeleteFiles@1
+  inputs:
+    SourceFolder: 
+    Contents: |
+      !(**/1)
+      **/2
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      ls
