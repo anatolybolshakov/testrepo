@@ -22,7 +22,7 @@ steps:
     SourceFolder: 
     Contents: |
       **/*.js
-      !**/1.js
+      !(**/1.js)
 
 
 - task: Bash@3
