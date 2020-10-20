@@ -21,8 +21,8 @@ steps:
   inputs:
     SourceFolder: 
     Contents: |
+      !**/1.js
       **/*.js
-      !(**/1.js)
 
 
 - task: Bash@3
