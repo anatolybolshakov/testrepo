@@ -14,15 +14,16 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      echo a >> 1
-      echo b >> 2
+      echo a >> 1.js
+      echo b >> 2.js
 
 - task: DeleteFiles@1
   inputs:
     SourceFolder: 
     Contents: |
-      !(**/1)
-      **/2
+      !(**/1.js)
+      **/*.js
+
 
 - task: Bash@3
   inputs:
