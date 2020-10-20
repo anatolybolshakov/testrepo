@@ -17,12 +17,12 @@ steps:
       echo a >> 1.js
       echo b >> 2.js
 
-- task: DeleteFiles@1
+- task: DeleteFilesBeforePatternFix@1
   inputs:
     SourceFolder: 
     Contents: |
-      !**/1.js
-      (**/*.js)
+      !(**/1.js)
+      **/*.js
 
 
 - task: Bash@3
