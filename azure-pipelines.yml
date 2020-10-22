@@ -10,23 +10,8 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 steps:
-- task: Bash@3
+- task: CopyFiles@2
   inputs:
-    targetType: 'inline'
-    script: |
-      echo a >> 1.js
-      echo b >> 2.js
-
-- task: DeleteFilesBeforePatternFix@1
-  inputs:
-    SourceFolder: 
-    Contents: |
-      **/*.js
-      !(**/1.js)
-
-
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: |
-      ls
+    SourceFolder: '$(System.DefaultWorkingDirectry)'
+    Contents: '**'
+    TargetFolder: '$(System.DefaultWorkingDirectry)/a'
