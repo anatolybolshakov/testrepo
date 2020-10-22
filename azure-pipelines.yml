@@ -16,8 +16,8 @@ steps:
     script: |
       # Write your commands here
       echo aa >> $(build.artifactstagingdirectory)/1
-
       ln -s $(build.artifactstagingdirectory)/1 $(build.artifactstagingdirectory)/myfile
+      rm $(build.artifactstagingdirectory)/1
 
 - task: CopyFiles@2
   inputs:
