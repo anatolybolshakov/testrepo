@@ -16,9 +16,10 @@ steps:
     script: |
       # Write your commands here
       
-      echo '$(System.DefaultWorkingDirectry)'
+      echo '$(build.artifactstagingdirectory)'
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(System.DefaultWorkingDirectry)'
+    SourceFolder: '$(build.artifactstagingdirectory)'
     Contents: '**'
-    TargetFolder: '$(System.DefaultWorkingDirectry)/a'
+    TargetFolder: '$(build.artifactstagingdirectory)/a'
+
