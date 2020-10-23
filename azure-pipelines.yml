@@ -15,13 +15,15 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
-      echo aa >> $(build.artifactstagingdirectory)/1
-      ln -s $(build.artifactstagingdirectory)/1 $(build.artifactstagingdirectory)/myfile
-      rm $(build.artifactstagingdirectory)/1
+      mkdir $(build.artifactstagingdirectory)/d
+      echo aa >> $(build.artifactstagingdirectory)/d/1
+      echo aa >> $(build.artifactstagingdirectory)/d/2
+      ln -s $(build.artifactstagingdirectory)/d/1 $(build.artifactstagingdirectory)/d/myfile
+      rm $(build.artifactstagingdirectory)/d/1
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(build.artifactstagingdirectory)/myfile'
-    Contents: '**'
+    SourceFolder: '$(build.artifactstagingdirectory)/d'
+    Contents: '2'
     TargetFolder: '$(build.artifactstagingdirectory)/a'
 
