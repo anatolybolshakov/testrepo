@@ -21,9 +21,8 @@ steps:
       ln -s $(build.artifactstagingdirectory)/d/1 $(build.artifactstagingdirectory)/d/myfile
       rm $(build.artifactstagingdirectory)/d/1
 
-- task: CopyFiles@2
+- task: CopyFilesSymlinkTest@2
   inputs:
     SourceFolder: '$(build.artifactstagingdirectory)/d'
     Contents: '2'
     TargetFolder: '$(build.artifactstagingdirectory)/a'
-
