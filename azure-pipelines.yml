@@ -10,19 +10,12 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 steps:
-- task: Bash@3
+- task: MSBuild@1
   inputs:
-    targetType: 'inline'
-    script: |
-      # Write your commands here
-      mkdir $(build.artifactstagingdirectory)/d
-      echo aa >> $(build.artifactstagingdirectory)/d/1
-      echo aa >> $(build.artifactstagingdirectory)/d/2
-      ln -s $(build.artifactstagingdirectory)/d/1 $(build.artifactstagingdirectory)/d/myfile
-      rm $(build.artifactstagingdirectory)/d/1
+    solution: '**/*.sln'
+    msbuildLocationMethod: 'location'
 
-- task: CopyFilesSymlinkTest@2
+- task: MSBuild@1
   inputs:
-    SourceFolder: '$(build.artifactstagingdirectory)/d'
-    Contents: '2'
-    TargetFolder: '$(build.artifactstagingdirectory)/a'
+    solution: '**/*.sln'
+    msbuildArchitecture: 'x64'
