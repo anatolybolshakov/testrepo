@@ -10,12 +10,7 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 steps:
-- task: MSBuild@1
+- task: DownloadSecureFile@1
   inputs:
-    solution: '**/*.sln'
-    msbuildLocationMethod: 'location'
-
-- task: MSBuild@1
-  inputs:
-    solution: '**/*.sln'
-    msbuildArchitecture: 'x64'
+    secureFile: 'secureFile.txt'
+    socketTimeout: '20000'
